@@ -1,0 +1,19 @@
+{{- '<bos>' -}}
+{%- set ns = namespace(sys='') -%}
+{%- for m in messages -%}
+  {%- if m['role'] == 'system' -%}
+    {%- set ns.sys = ns.sys + (m['content'] | trim) + '\n\n' -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- for m in messages -%}
+  {%- if m['role'] == 'system' -%}
+  {%- elif m['role'] == 'user' -%}
+    {{- '<|user|>' + ns.sys + (m['content'] | trim) -}}
+    {%- set ns.sys = '' -%}
+  {%- elif m['role'] == 'assistant' -%}
+    {{- '<|assistant|>' + (m['content'] | trim) + '<eos>' -}}
+  {%- endif -%}
+{%- endfor -%}
+{%- if add_generation_prompt -%}
+  {{- '<|assistant|>' -}}
+{%- endif -%}
