@@ -1,5 +1,5 @@
 ---
-license: apache-2.0
+license: other
 language:
   - zh
 library_name: transformers
@@ -351,7 +351,7 @@ if __name__ == "__main__":
 
 ## 数据与许可
 
-- 模型权重与推理代码：**Apache-2.0**。
+- 模型权重与推理代码：**other**。
 - 指令微调数据基于公开中文指令数据集（BELLE 系列）与公开中文语料构建；使用与再分发请同时遵守上游数据集许可。
 - 本仓库仅包含推理所需文件，不含训练数据。
 
