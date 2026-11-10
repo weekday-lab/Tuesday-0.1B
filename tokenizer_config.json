@@ -1,0 +1,68 @@
+{
+  "add_bos_token": false,
+  "add_eos_token": false,
+  "added_tokens_decoder": {
+    "0": {
+      "content": "<pad>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "1": {
+      "content": "<unk>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "2": {
+      "content": "<bos>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "3": {
+      "content": "<eos>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "4": {
+      "content": "<|user|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "5": {
+      "content": "<|assistant|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    }
+  },
+  "bos_token": "<bos>",
+  "clean_up_tokenization_spaces": false,
+  "eos_token": "<eos>",
+  "model_max_length": 1024,
+  "pad_token": "<pad>",
+  "tokenizer_class": "MiniLMTokenizer",
+  "unk_token": "<unk>",
+  "chat_template": "{{- '<bos>' -}}\n{%- set ns = namespace(sys='') -%}\n{%- for m in messages -%}\n  {%- if m['role'] == 'system' -%}\n    {%- set ns.sys = ns.sys + (m['content'] | trim) + '\\n\\n' -%}\n  {%- endif -%}\n{%- endfor -%}\n{%- for m in messages -%}\n  {%- if m['role'] == 'system' -%}\n  {%- elif m['role'] == 'user' -%}\n    {{- '<|user|>' + ns.sys + (m['content'] | trim) -}}\n    {%- set ns.sys = '' -%}\n  {%- elif m['role'] == 'assistant' -%}\n    {{- '<|assistant|>' + (m['content'] | trim) + '<eos>' -}}\n  {%- endif -%}\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n  {{- '<|assistant|>' -}}\n{%- endif -%}\n",
+  "auto_map": {
+    "AutoTokenizer": [
+      "tokenization_minilm.MiniLMTokenizer",
+      "tokenization_minilm.MiniLMTokenizerFast"
+    ]
+  }
+}
