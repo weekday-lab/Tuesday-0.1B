@@ -113,7 +113,7 @@ print(tok.decode(out[0][input_ids.shape[1]:], skip_special_tokens=True))
 
 | 文件 | 说明 |
 |---|---|
-| `model.safetensors` | 模型权重（F32，423MB） |
+| `model.safetensors` | 模型权重（F32，423MB）[model.safetensors](https://pan.baidu.com/s/1Hp6G9L0_i3f4lxWTXipzlw?pwd=huqk) |
 | `config.json` | 结构配置，含 `auto_map`（指向动态代码） |
 | `generation_config.json` | 推荐生成参数 |
 | `tokenizer.json` | 快速分词器（Rust 格式，2.7MB） |
