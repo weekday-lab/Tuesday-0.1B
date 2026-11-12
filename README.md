@@ -354,6 +354,18 @@ if __name__ == "__main__":
 - 模型权重与推理代码：**other**。
 - 指令微调数据基于公开中文指令数据集（BELLE 系列）与公开中文语料构建；使用与再分发请同时遵守上游数据集许可。
 - 本仓库仅包含推理所需文件，不含训练数据。
+  
+```{"source": "skypile", "dataset": "Skywork/SkyPile-150B", "license": "Skywork社区许可+Apache2.0",
+ "allowed_use": "commercial_ok_no_application", "obligation": "分发衍生品附来源与协议副本; 声明修改; 禁商标",
+ "license_copy": "licenses/skywork_community_license.pdf"}
+{"source": "wikipedia_zh", "dataset": "zh.wikipedia dump 2025xx", "license": "CC BY-SA 3.0",
+ "allowed_use": "commercial_ok_with_attribution", "obligation": "署名+相同方式共享",
+ "attribution": "维基百科编者, CC BY-SA 3.0, https://zh.wikipedia.org"}
+{"source": "thucnews_*", "dataset": "THUCNews (THUNLP)", "license": "研究专用",
+ "allowed_use": "research_only", "obligation": "禁止商用; 内容版权归新浪"}
+{"source": "belle", "dataset": "BelleGroup/train_3.5M_CN", "license": "GPL-3.0+研究专用条款",
+ "allowed_use": "research_only", "obligation": "衍生物(含训出的模型)仅限研究"}
+```
 
 ## 引用
 
