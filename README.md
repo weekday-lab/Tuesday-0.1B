@@ -1,5 +1,5 @@
 ---
-license: other
+license: other-only for personal research,not for commercial
 language:
   - zh
 library_name: transformers
